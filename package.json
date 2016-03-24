@@ -1,0 +1,23 @@
+{
+  "name": "flags-maps",
+  "version": "1.0.0",
+  "description": "Creation markers/flags in real time with google maps",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josemunozr/flags-maps.git"
+  },
+  "keywords": [
+    "marker",
+    "maps",
+    "googlemaps"
+  ],
+  "author": "José Muñoz R",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/josemunozr/flags-maps/issues"
+  },
+  "homepage": "https://github.com/josemunozr/flags-maps#readme"
+}
