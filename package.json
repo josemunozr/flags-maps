@@ -24,14 +24,21 @@
     "standard": "^6.0.8"
   },
   "dependencies": {
-    "express": "^4.13.4"
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "express": "^4.13.4",
+    "jquery": "^2.2.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "public": "mkdir -p public && mkdir -p public/images/",
+    "cp-file": "cp src/client/*.js public/ && cp src/client/images/*.png public/images/ ",
+    "build-js": "NODE_PATH=. browserify -t [ babelify --presets [ es2015 ] ] src/client/index.js > public/app.js",
+    "build": "npm run public && npm run cp-file && npm run build-js",
     "jade": "jade -w src/client/*.jade --out public/",
     "lint": "standard",
     "dist": "babel src/server/index.js src/server/**/*.js --out-dir dist --presets es2015",
     "serve": "NODE_PATH=./dist node dist/src/server",
-    "start": "npm run lint && npm run dist && npm run serve"
+    "start": "npm run lint && npm run dist && npm run build && npm run serve"
   }
 }
