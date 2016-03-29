@@ -4,17 +4,17 @@ head
   title Markers
   link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css")
   link(rel="stylesheet",href="https://fonts.googleapis.com/icon?family=Material+Icons")
-
+  link(rel="stylesheet",href="index.css")  
 body
   ul#slide-out.side-nav
     li(href="#!") First Sidebar Link
-  .row
-    .col.s12
-      //
-        img.responsive-img(src="./images/google-maps.png",width="100%",height="100%")
+    
+  #map
+
   .fixed-action-btn#btnslide
     a.btn-floating.btn-large.green.button-collapse(data-activates="slide-out")
       i.large.material-icons toc
   
+  script(type="text/javascript",src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLsXodPfyM65FYwVM6Gz9TQgYLRoiFtUw")
   script(type="text/javascript",src="app.js")
-
+  

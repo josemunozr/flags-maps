@@ -28,12 +28,13 @@
     "babelify": "^7.2.0",
     "browserify": "^13.0.0",
     "express": "^4.13.4",
-    "jquery": "^2.2.2"
+    "jquery": "^2.2.2",
+    "materialize-css": "^0.97.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "public": "mkdir -p public && mkdir -p public/images/",
-    "cp-file": "cp src/client/*.js public/ && cp src/client/images/*.png public/images/ ",
+    "public": "mkdir -p public && mkdir -p public/img/",
+    "cp-file": "cp src/client/asset/img/*.png public/img/ && cp src/client/asset/*.css public/",
     "build-js": "NODE_PATH=. browserify -t [ babelify --presets [ es2015 ] ] src/client/index.js > public/app.js",
     "build": "npm run public && npm run cp-file && npm run build-js",
     "jade": "jade -w src/client/*.jade --out public/",
@@ -43,16 +44,16 @@
     "start": "npm run lint && npm run dist && npm run build && npm run serve"
   },
   "browserify": {
-      "transform": [
-        "browserify-shim"
-      ]
-    },
-    "browser": {
-      "jquery": "./node_modules/jquery/dist/jquery.js",
-      "materialize": "./node_modules/materialize-css/dist/js/materialize.min.js"
-    },
-    "browserify-shim": {
-      "jquery": "$",
-      "materialize": "materialize"
-    }
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js",
+    "materialize": "./node_modules/materialize-css/dist/js/materialize.min.js"
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "materialize": "materialize"
+  }
 }
