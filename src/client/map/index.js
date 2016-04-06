@@ -13,7 +13,7 @@ export function geolocation (callback) {
       let lat = position.coords.latitude
       let lng = position.coords.longitude
 
-      if (callback) callback({ lat: lat, lng: lng })
+      if (callback) callback(null, { lat: lat, lng: lng })
     }, (err) => {
       if (err) callback(err)
     })
