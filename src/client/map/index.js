@@ -7,19 +7,23 @@ export function initMap (id, position, zoom) {
   })
 }
 
-export function geolocation (idDom) {
+export function geolocation (callback) {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
       let lat = position.coords.latitude
       let lng = position.coords.longitude
 
-      return initMap(idDom, { lat: lat, lng: lng }, 13)
+      if (callback) callback({ lat: lat, lng: lng })
     }, (err) => {
-      if (err) {
-        // lat and lng of Santiago, Chile
-        return initMap(idDom, {lat: -33.4488897, lng: -70.6692655}, 13)
-      }
+      if (err) callback(err)
     })
   }
 }
 
+export function createMarker (location, map) {
+  return new google.maps.Marker({
+    position: location,
+    title: 'new marker',
+    map: map
+  })
+}
