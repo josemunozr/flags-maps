@@ -6,15 +6,18 @@ head
   link(rel="stylesheet",href="https://fonts.googleapis.com/icon?family=Material+Icons")
   link(rel="stylesheet",href="index.css")  
 body
-  ul#slide-out.side-nav
-    li(href="#!") First Sidebar Link
-    
+  #slide-out.side-nav
+    .row
+      .col.s12
+        h3 Search
+        .input-field
+          input(type="text")#direction.validation
   #map
 
   .fixed-action-btn#btnslide
     a.btn-floating.btn-large.green.button-collapse(data-activates="slide-out")
       i.large.material-icons toc
   
-  script(type="text/javascript",src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLsXodPfyM65FYwVM6Gz9TQgYLRoiFtUw")
+  script(type="text/javascript",src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLsXodPfyM65FYwVM6Gz9TQgYLRoiFtUw&signed_in=true&libraries=places")
   script(type="text/javascript",src="app.js")
   
