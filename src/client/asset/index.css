@@ -7,3 +7,10 @@ body {
 #map {
 	height: 100%;
 }
+
+.no-margin {
+	margin: 0!important;
+}
+.height-complete {
+	height: 70vh;
+}
