@@ -1,2 +1,2 @@
-# flags-maps
-Creation markers/flags in real time with google maps
+# Markers Realtime
+Creación de markers en tiempo real con socket.io

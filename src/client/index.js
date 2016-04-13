@@ -15,5 +15,8 @@ geolocation((err, position) => {
   createMarker(position.lat, position.lng)
 })
 
-autocomplete('direction')
+autocomplete('direction', (err, position) => {
+  if (err) return console.log(err)
+  createMarker(position.lat, position.lng)
+})
 

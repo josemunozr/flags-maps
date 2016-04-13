@@ -29,10 +29,10 @@ export function createMarker (lat, lng) {
   })
 }
 
-export function autocomplete (input) {
+export function autocomplete (input, callback) {
   let autocomplete = new google.maps.places.Autocomplete(document.getElementById(input))
 
-  autocomplete.addListener('place_changed', function () {
+  autocomplete.addListener('place_changed', () => {
     let place = autocomplete.getPlace()
 
     if (!place.geometry) {
@@ -46,6 +46,6 @@ export function autocomplete (input) {
       map.setZoom(17)
     }
 
-    createMarker(place.geometry.location.lat(), place.geometry.location.lng())
+    if (callback) callback(null, {lat: place.geometry.location.lat(), lng: place.geometry.location.lng()})
   })
 }
