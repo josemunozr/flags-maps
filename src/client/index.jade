@@ -1,14 +1,16 @@
 doctype html
 head
   meta(charset="UTF-8")
+  meta(name='viewport', content='width=device-width, initial-scale=1')
   title Markers
-  link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css")
+  link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css")
   link(rel="stylesheet",href="https://fonts.googleapis.com/icon?family=Material+Icons")
+  link(rel="stylesheet",href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css")
   link(rel="stylesheet",href="index.css")  
 body
   .container
     .row
-      h3.red-text.accent-2 Buscar Dirección
+      h4.red-text.accent-2 Agregar Marcador
       .input-field
         input(type="text")#direction.validation
     .row.no-ma
@@ -19,7 +21,14 @@ body
   .fixed-action-btn#btnslide
     a.btn-floating.btn-large.green.button-collapse
       i.large.material-icons toc
-  
+
+  footer.page-footer.teal.lighten-2
+    .footer-copyright
+      .container
+        a.grey-text.text-lighten-4(href="#!") JoseMunozR_
+          i.material-icons.left.line-height50 code
+          i.fa.fa-heart.left.line-height50
+        
   script(type="text/javascript",src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLsXodPfyM65FYwVM6Gz9TQgYLRoiFtUw&signed_in=true&libraries=places")
   script(type="text/javascript",src="app.js")
   
