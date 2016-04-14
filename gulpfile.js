@@ -31,8 +31,9 @@ gulp.task('copy:css', function () {
 gulp.task('copy', ['copy:img', 'copy:css'])
 
 gulp.task('watch', function () {
-  gulp.watch('./src/client/**/*.jade', ['template']),
+  gulp.watch('./src/client/**/*.jade', ['template'])
   gulp.watch('./src/client/asset/*.css', ['copy:css'])
+  gulp.watch('./src/server/**/*.js', ['babel'])
 })
 
 gulp.task('default', ['watch', 'template', 'babel', 'copy'])
