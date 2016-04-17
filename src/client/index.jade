@@ -1,7 +1,7 @@
 doctype html
 head
   meta(charset="UTF-8")
-  meta(name='viewport', content='width=device-width, initial-scale=1')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
   title Markers
   link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css")
   link(rel="stylesheet",href="https://fonts.googleapis.com/icon?family=Material+Icons")
@@ -10,33 +10,24 @@ head
 body
   .container
     .row
-      h4.red-text.accent-2 Agregar Marcador
-      .input-field
-        input(type="text")#direction.validation
+      .col.s10.offset-s1
+        h4.red-text.accent-2 Agregar Marcador
+        .input-field
+          input(type="text")#direction.validation
     .row.no-ma
       .col.s12
         .card-panel.hoverable.height-complete
           #map
-
-  //
-    .fixed-action-btn#btnslide
-    a.btn-floating.btn-large.green
-      i.large.material-icons open_in_new
-    ul
-      li
-        a.btn-floating.blue.lighten-1(href="https://twitter.com/JoseMunozR_", target="_blank")
-          i.fa.fa-twitter
-      li
-        a.btn-floating.grey.darken-4(href="https://github.com/josemunozr", target="_blank")
-          i.fa.fa-github
-
   footer.page-footer.teal.lighten-2
     .footer-copyright
       .container
         a.grey-text.text-lighten-4(href="#!") JoseMunozR_
           i.material-icons.left.line-height50 code
-          i.fa.fa-heart.left.line-height50
-        
+        a.grey-text.text-lighten-4.right.social-btn.margin-social-btn(href="https://twitter.com/JoseMunozR_", target="_blank")
+          i.fa.fa-twitter
+        a.grey-text.text-lighten-4.right.social-btn(href="https://twitter.com/JoseMunozR_", target="_blank")
+          i.fa.fa-github
+
   script(type="text/javascript",src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLsXodPfyM65FYwVM6Gz9TQgYLRoiFtUw&signed_in=true&libraries=places")
   script(type="text/javascript",src="app.js")
   

@@ -18,3 +18,11 @@ body {
 .line-height50 {
 	line-height: 50px!important;
 }
+
+.margin-social-btn {
+	margin: 0 15px;
+}
+
+.social-btn {
+	font-size: 25px
+}
