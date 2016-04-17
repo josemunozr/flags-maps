@@ -11,6 +11,10 @@ app.use(express.static('public'))
 
 io.on('connection', (socket) => {
   console.log(`Connected ${socket.id}`)
+
+  io.on('marker', (position) => {
+    console.log(position)
+  })
 })
 
 server.listen(port, () => console.log(`Server runing at http://localhost:${port}/`))

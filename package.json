@@ -33,7 +33,8 @@
     "express": "^4.13.4",
     "jquery": "^2.2.2",
     "materialize-css": "^0.97.5",
-    "socket.io": "^1.4.5"
+    "socket.io": "^1.4.5",
+    "socket.io-client": "^1.4.5"
   },
   "scripts": {
     "build-js": "NODE_PATH=. browserify -t [ babelify --presets [ es2015 ] ] src/client/index.js > public/app.js",
