@@ -12,8 +12,8 @@ app.use(express.static('public'))
 io.on('connection', (socket) => {
   console.log(`Connected ${socket.id}`)
 
-  io.on('marker', (position) => {
-    console.log(position)
+  socket.on('marker:new', (position) => {
+    io.sockets.emit('marker:done', position)
   })
 })
 

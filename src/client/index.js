@@ -1,7 +1,7 @@
 // import $ from 'jquery'
 // import 'materialize'
 import socketio from 'socket.io-client'
-import {initMap, geolocation, createMarker, autocomplete} from 'src/server/map'
+import {initMap, geolocation, createMarker, autocomplete} from 'src/client/map'
 
 const socket = socketio()
 
@@ -15,7 +15,9 @@ geolocation((err, position) => {
 
 autocomplete('direction', (err, position) => {
   if (err) return console.log(err)
-  socket.emit('marker', position)
-  createMarker(position.lat, position.lng)
+  socket.emit('marker:new', position)
 })
 
+socket.on('marker:done', (position) => {
+  createMarker(position.lat, position.lng)
+})
