@@ -1,7 +1,7 @@
 // import $ from 'jquery'
 // import 'materialize'
 import socketio from 'socket.io-client'
-import {initMap, geolocation, createMarker, autocomplete} from './map'
+import {initMap, geolocation, createMarker, autocomplete} from 'src/server/map'
 
 const socket = socketio()
 

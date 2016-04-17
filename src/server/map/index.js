@@ -1,8 +1,10 @@
+import window from 'global/window'
+
 const google = window.google
 var map = ''
 
 export function initMap (id, position, zoom) {
-  map = new google.maps.Map(document.getElementById(id), {
+  map = new google.Map(document.getElementById(id), {
     center: position,
     zoom: zoom
   })
@@ -22,15 +24,15 @@ export function geolocation (callback) {
 }
 
 export function createMarker (lat, lng) {
-  return new google.maps.Marker({
+  return new google.Marker({
     title: 'new marker',
     map: map,
-    position: new google.maps.LatLng(lat, lng)
+    position: new google.LatLng(lat, lng)
   })
 }
 
 export function autocomplete (input, callback) {
-  let autocomplete = new google.maps.places.Autocomplete(document.getElementById(input))
+  let autocomplete = new google.places.Autocomplete(document.getElementById(input))
 
   autocomplete.addListener('place_changed', () => {
     let place = autocomplete.getPlace()
